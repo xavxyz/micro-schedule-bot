@@ -1,0 +1,16 @@
+{
+  "name": "micro-codecamps-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro"
+  },
+  "repository": "https://github.com/xavcz/micro-codecamps-bot.git",
+  "author": "xavcz <xavier.cazalot@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^7.0.6",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}
