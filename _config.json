@@ -1,5 +1,20 @@
 {
   "username": "React In Flip Flops",
   "icon_url": "https://www.reactinflipflops.com/images/logo.png",
-  "text": "webhook url in env :smile:"
+  "messages": [
+    {
+      "text": "O rly? :thinking_face:"
+    },
+    {
+      "attachments": [
+        {
+          "fallback": "Surf today at 16:30 :ocean:",
+          "color": "#3aa3e3",
+          "text": "Surf session today! :surfer:",
+          "title": "Join Maciej and learn his ninja moves!",
+          "image_url": "https://pbs.twimg.com/media/C5lfZT8WYAAc_xM.jpg:large"
+        }
+      ]
+    }
+  ]
 }

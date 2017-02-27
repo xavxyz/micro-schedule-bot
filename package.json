@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "micro"
+    "start": "micro",
+    "deploy": "now -E .env"
   },
   "repository": "https://github.com/xavcz/micro-codecamps-bot.git",
   "author": "xavcz <xavier.cazalot@gmail.com>",
@@ -11,6 +12,7 @@
   "dependencies": {
     "micro": "^7.0.6",
     "request": "^2.79.0",
-    "request-promise": "^4.1.1"
+    "request-promise": "^4.1.1",
+    "urlencoded-body-parser": "^2.0.0"
   }
 }
