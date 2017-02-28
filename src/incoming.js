@@ -11,35 +11,23 @@ require('./outgoing');
 const { WEBHOOK_URL, SLASH_TOKEN, ALLOWED_USER } = process.env;
 
 const updateConfig = async (newConfig)  => {
-  try {
-    /*
-    * get the current config
-    */
-    
-    console.log('before reading');
-    const rawConfig = await readFile('_config.json');
-    const config = JSON.parse(rawConfig);
-    
-    console.log('after reading');
-    
-    
-    /*
-    * merge the current config with the new config
-    */
-    const mergedConfig = Object.assign({}, config, newConfig);
-    
-    /*
-    * replace the previous config with a new config
-    */
-    console.log('before writing');
-    await writeFile('_config.json', JSON.stringify(mergedConfig, null, 2));
-    
-    console.log('after writing');
-    
-    return mergedConfig;
-  } catch(e) {
-    console.error(e);
-  }
+  /*
+  * get the current config
+  */
+  const rawConfig = await readFile('_config.json');
+  const config = JSON.parse(rawConfig);
+      
+  /*
+  * merge the current config with the new config
+  */
+  const mergedConfig = Object.assign({}, config, newConfig);
+  
+  /*
+  * replace the previous config with a new config
+  */
+  await writeFile('_config.json', JSON.stringify(mergedConfig, null, 2));
+      
+  return mergedConfig;
 };
 
 /*
@@ -121,7 +109,6 @@ module.exports = handleErrors(async (req, res) => {
     if (reset) { // note: should be done with some reset token from a slash command
       const response = await updateConfig({
         running: false,
-        messageToSendIndex: 0,
       });
       
       return {
@@ -132,7 +119,6 @@ module.exports = handleErrors(async (req, res) => {
     
     await updateConfig({
       running: true,
-      messageToSendIndex: 0,
     });
      
      /*
