@@ -1,7 +1,7 @@
 {
   "name": "micro-codecamps-bot",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/incoming.js",
   "scripts": {
     "start": "micro",
     "deploy": "now -E .env"
@@ -10,7 +10,9 @@
   "author": "xavcz <xavier.cazalot@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "fs-promise": "^2.0.0",
     "micro": "^7.0.6",
+    "node-schedule": "^1.2.0",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "urlencoded-body-parser": "^2.0.0"
