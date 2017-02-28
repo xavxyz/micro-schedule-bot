@@ -6,22 +6,16 @@
     {
       "schedule": {
         "dayOfWeek": 2,
-        "hour": 9,
-        "minute": 56
+        "hour": 10,
+        "minute": 19
       },
-      "message": {
-        "attachments": [
-          {
-            "fallback": "Time to eat pinchos! :oden:",
-            "color": "#3aa3e3",
-            "text": ":oden: Let's go for lunch at the local market!\n:world_map: Google Maps itinerary :arrow_right: https://goo.gl/maps/nVKT8VYBrTD2",
-            "title": "Pinchos at the local market!",
-            "title_link": "https://goo.gl/maps/nVKT8VYBrTD2",
-            "image_url": "http://www.icigrancanaria.com/wp-content/uploads/2014/09/mercadodelpuerto2.jpg",
-            "footer": "This bot is on Github. <https://github.com/xavcz/micro-codecamps-bot|Contributions welcomed!>",
-            "footer_icon": "https://assets-cdn.github.com/images/icons/emoji/octocat.png"
-          }
-        ]
+      "attachment": {
+        "fallback": "Time to eat pinchos! :oden:",
+        "color": "#3aa3e3",
+        "text": ":oden: Let's go for lunch at the local market!\n:world_map: Google Maps itinerary :arrow_right: https://goo.gl/maps/nVKT8VYBrTD2",
+        "title": "Pinchos at the local market!",
+        "title_link": "https://goo.gl/maps/nVKT8VYBrTD2",
+        "image_url": "http://www.icigrancanaria.com/wp-content/uploads/2014/09/mercadodelpuerto2.jpg"
       }
     },
     {
@@ -30,19 +24,13 @@
         "hour": 9,
         "minute": 57
       },
-      "message": {
-        "attachments": [
-          {
-            "fallback": "Surfing starts in 45 minutes! :ocean:",
-            "color": "#3aa3e3",
-            "text": ":ocean: Take your towel and grab a taxi (or walk but it’s long 35-minute walk) to <https://goo.gl/maps/gBxk2HM8v272|Oceanside Surf>\n\n:arrow_right: Address: Calle Numancia\n\n:world_map: Google Maps itinerary: https://goo.gl/maps/gBxk2HM8v272",
-            "title": "Surfing starts in 45 minutes!",
-            "title_link": "https://goo.gl/maps/gBxk2HM8v272",
-            "image_url": "https://d3uepj124s5rcx.cloudfront.net/items/0w2I0Y130F0Z2U130w33/45-Calle-Numancia---Google-Maps.jpg?v=1a8e9804",
-            "footer": "This bot is on Github. <https://github.com/xavcz/micro-codecamps-bot|Contributions welcomed!>",
-            "footer_icon": "https://assets-cdn.github.com/images/icons/emoji/octocat.png"
-          }
-        ]
+      "attachment": {
+        "fallback": "Surfing starts in 45 minutes! :ocean:",
+        "color": "#3aa3e3",
+        "text": ":ocean: Take your towel and grab a taxi (or walk but it’s long 35-minute walk) to <https://goo.gl/maps/gBxk2HM8v272|Oceanside Surf>\n\n:arrow_right: Address: Calle Numancia\n\n:world_map: Google Maps itinerary: https://goo.gl/maps/gBxk2HM8v272",
+        "title": "Surfing starts in 45 minutes!",
+        "title_link": "https://goo.gl/maps/gBxk2HM8v272",
+        "image_url": "https://d3uepj124s5rcx.cloudfront.net/items/0w2I0Y130F0Z2U130w33/45-Calle-Numancia---Google-Maps.jpg?v=1a8e9804"
       }
     },
     {
@@ -51,18 +39,12 @@
         "hour": 9,
         "minute": 58
       },
-      "message": {
-        "attachments": [
-          {
-            "fallback": "Surfing starts! :surfer:",
-            "color": "#3aa3e3",
-            "text": "Ready to learn some ninja moves? :smile:",
-            "title": ":surfer: Surfing starts!",
-            "image_url": "https://pbs.twimg.com/media/C5lfZT8WYAAc_xM.jpg:large",
-            "footer": "This bot is on Github. <https://github.com/xavcz/micro-codecamps-bot|Contributions welcomed!>",
-            "footer_icon": "https://assets-cdn.github.com/images/icons/emoji/octocat.png"
-          }
-        ]
+      "attachment": {
+        "fallback": "Surfing starts! :surfer:",
+        "color": "#3aa3e3",
+        "text": "Ready to learn some ninja moves? :smile:",
+        "title": ":surfer: Surfing starts!",
+        "image_url": "https://pbs.twimg.com/media/C5lfZT8WYAAc_xM.jpg:large"
       }
     }
   ]

@@ -23,7 +23,7 @@ const { username, icon_url, scheduledMessages } = JSON.parse(config);
  * loop over the scheduled messages to create Node jobs
  */
 const jobs = scheduledMessages.map(
-  ({schedule: dateObject, message: messageToSend}) => schedule.scheduleJob(
+  ({schedule: dateObject, attachment: messageToSend}) => schedule.scheduleJob(
     /*
      * date object of the shape {hour: 14, minute: 30, dayOfWeek: 1}
      */
@@ -35,18 +35,22 @@ const jobs = scheduledMessages.map(
     () => rp({
         uri: WEBHOOK_URL,
         method: 'POST',
-        body: Object.assign({}, messageToSend, {
+        body: {
           username,
           icon_url,
-        }),
+          attachments: [
+            Object.assign({}, messageToSend, {
+              footer: 'This bot is on Github. <https://github.com/xavcz/micro-codecamps-bot|Contributions welcomed!>',
+              footer_icon: 'https://assets-cdn.github.com/images/icons/emoji/octocat.png',
+            }),
+          ],
+        },
         json: true,
       })
       .then(slackResponse => console.log(`Slack is happy: ${slackResponse}`))
       .catch(slackError => console.log(`Slack is unhappy: ${slackError}`))
   )
 );
-
-console.log('debug', schedule.scheduledJobs);
 
 /*******
  * interval-based scheduler:
