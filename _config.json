@@ -1,13 +1,12 @@
 {
-  "running": false,
   "username": "React In Flip Flops",
   "icon_url": "https://www.reactinflipflops.com/images/logo.png",
   "scheduledMessages": [
     {
       "schedule": {
         "dayOfWeek": 2,
-        "hour": 10,
-        "minute": 19
+        "hour": 15,
+        "minute": 43
       },
       "attachment": {
         "fallback": "Time to eat pinchos! :oden:",
