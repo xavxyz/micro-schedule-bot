@@ -1,10 +1,8 @@
-# micro-codecamps-bot
+# micro-schedule-bot
 
 [![Build Status](https://travis-ci.org/xavcz/micro-codecamps-bot.svg?branch=master)](https://travis-ci.org/xavcz/micro-codecamps-bot)
 
 Send scheduled messages to a Slack team.
-
-![screenshot](https://d3uepj124s5rcx.cloudfront.net/items/3L0b2f03471R1Z1z1J0i/Image%202017-03-01%20at%209.20.39%20AM.png?v=b229a1ec)
 
 You'll need a [webhook url](https://api.slack.com/incoming-webhooks), a [slash token](https://api.slack.com/slash-commands) & an allowed username (your username?) from Slack.
 
