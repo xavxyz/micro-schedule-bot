@@ -134,7 +134,7 @@ const addJobs = async () => {
           icon_url,
           attachments: [
             Object.assign({}, messageToSend, {
-              footer: 'This bot is on Github. <https://github.com/xavcz/micro-codecamps-bot|Contributions welcomed!>',
+              footer: 'This bot is on Github. <https://github.com/xavcz/micro-schedule-bot|Contributions welcomed!>',
               footer_icon: 'https://assets-cdn.github.com/images/icons/emoji/octocat.png',
             }),
           ],
