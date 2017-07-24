@@ -7,9 +7,8 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development nodemon --config package.json src/index.js",
-    "prestart": "npm run build",
-    "start": "micro dist/index.js",
     "build": "./node_modules/.bin/async-to-gen src --out-dir dist",
+    "start": "micro dist/index.js",
     "lint": "eslint --quiet --ext src/*.js .",
     "prettier": "prettier --write \"src/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
     "test": "npm run lint",
