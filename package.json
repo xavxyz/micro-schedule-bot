@@ -1,6 +1,6 @@
 {
-  "name": "micro-codecamps-bot",
-  "version": "1.0.0",
+  "name": "micro-schedule-bot",
+  "version": "1.1.0",
   "engineStrict": true,
   "engines": {
     "node": ">=6.0.0"
