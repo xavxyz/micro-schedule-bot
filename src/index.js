@@ -16,7 +16,11 @@ const { readFile, writeFile } = promisify('fs');
 const { scheduleJob, scheduledJobs } = require('node-schedule');
 const request = require('request-promise');
 
-const { checkEnvironment, requestIsPing, requestIsUrlEncoded } = require('./utils');
+const {
+  checkEnvironment,
+  requestIsPing,
+  requestIsUrlEncoded,
+} = require('./utils');
 
 /*
  * check required environment variables, will throw an error if not well configured
@@ -116,59 +120,38 @@ const addJobs = async () => {
   /*
    * loop over the scheduled messages to create Node jobs
    */
-  return scheduledMessages.map(({ schedule: dateObject, attachment: messageToSend }) => scheduleJob(
-    /*
-     * date object of the shape {hour: 14, minute: 30, dayOfWeek: 1}
-     */
-    dateObject,
-    /*
-     * return a promise to post to slack api on the webhook url
-     * note: should find a way to use async/await & object spread 
-     */
-    handleErrors(async () => {
-      const slackResponse = await request({
-        uri: WEBHOOK_URL,
-        method: 'POST',
-        body: {
-          username,
-          icon_url,
-          attachments: [
-            Object.assign({}, messageToSend, {
-              footer: 'This bot is on Github. <https://github.com/xavcz/micro-schedule-bot|Contributions welcomed!>',
-              footer_icon: 'https://assets-cdn.github.com/images/icons/emoji/octocat.png',
-            }),
-          ],
-        },
-        json: true,
-      });
+  return scheduledMessages.map(
+    ({ schedule: dateObject, attachment: messageToSend }) =>
+      scheduleJob(
+        /*
+         * date object of the shape {hour: 14, minute: 30, dayOfWeek: 1}
+         */
+        dateObject,
+        /*
+         * return a promise to post to slack api on the webhook url
+         * note: should find a way to use async/await & object spread 
+         */
+        handleErrors(async () => {
+          const slackResponse = await request({
+            uri: WEBHOOK_URL,
+            method: 'POST',
+            body: {
+              username,
+              icon_url,
+              attachments: [
+                Object.assign({}, messageToSend, {
+                  footer:
+                    'This bot is on Github. <https://github.com/xavcz/micro-schedule-bot|Contributions welcomed!>',
+                  footer_icon:
+                    'https://assets-cdn.github.com/images/icons/emoji/octocat.png',
+                }),
+              ],
+            },
+            json: true,
+          });
 
-      console.log(`Slack is happy: ${slackResponse}`);
-    })
-  ));
+          console.log(`Slack is happy: ${slackResponse}`);
+        })
+      )
+  );
 };
-
-/*
- * interval-based scheduler: keep the server alive, run every 5 minutes
- */
-setInterval(
-  handleErrors(async () => {
-    /*
-     * create a recognizable header for micro
-     */
-    const pingConfig = {
-      headers: { 'user-agent': 'micro-ping' },
-      json: true,
-    };
-
-    /*
-     * ping the server with the header above...
-     * note: should find a way to use async/await in this file
-     */
-    const ping = await request(process.env.ROOT_URL || 'http://localhost:3000', pingConfig);
-    console.log(ping);
-  }),
-  /*
-   * ...every 5 minutes
-   */
-  300000
-);
