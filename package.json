@@ -19,18 +19,18 @@
   "author": "xavcz <xavier.cazalot@gmail.com> (http://xav.cz)",
   "license": "MIT",
   "dependencies": {
-    "micro": "^7.0.6",
-    "node-schedule": "^1.2.0",
+    "micro": "^7.3.3",
+    "node-schedule": "^1.2.3",
     "promisify-node": "^0.4.0",
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1",
-    "urlencoded-body-parser": "^2.0.0"
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "urlencoded-body-parser": "^2.0.1"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "eslint": "^3.16.1",
-    "eslint-plugin-prettier": "^2.0.1",
-    "prettier": "^0.20.0"
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "prettier": "^1.5.3"
   },
   "execMap": {
     "js": "micro"
