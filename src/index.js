@@ -70,7 +70,7 @@ module.exports = handleErrors(async (req, res) => {
   if (slackToken !== SLASH_TOKEN || slackSender !== ALLOWED_USER) {
     return {
       response_type: 'ephemeral',
-      text: `Sorry, you can't do that. :dizzy_face:`,
+      text: `Sorry, you can't do that. 😑`,
     };
   }
 
@@ -87,7 +87,7 @@ module.exports = handleErrors(async (req, res) => {
 
     return {
       response_type: 'ephemeral',
-      text: `Messages reset. :ok_hand:`,
+      text: `Messages reset. 👌`,
     };
   }
 
@@ -98,7 +98,7 @@ module.exports = handleErrors(async (req, res) => {
    */
   return {
     response_type: 'ephemeral',
-    text: `Bot started! :robot:`,
+    text: `Bot started! 🤖`,
   };
 });
 
@@ -118,13 +118,13 @@ const addJobs = async () => {
    */
   return scheduledMessages.map(({ schedule: dateObject, attachment: messageToSend }) => scheduleJob(
     /*
-       * date object of the shape {hour: 14, minute: 30, dayOfWeek: 1}
-       */
+     * date object of the shape {hour: 14, minute: 30, dayOfWeek: 1}
+     */
     dateObject,
     /*
-       * return a promise to post to slack api on the webhook url
-       * note: should find a way to use async/await & object spread 
-       */
+     * return a promise to post to slack api on the webhook url
+     * note: should find a way to use async/await & object spread 
+     */
     handleErrors(async () => {
       const slackResponse = await request({
         uri: WEBHOOK_URL,
@@ -153,23 +153,22 @@ const addJobs = async () => {
 setInterval(
   handleErrors(async () => {
     /*
-   * create a recognizable header for micro
-   */
+     * create a recognizable header for micro
+     */
     const pingConfig = {
       headers: { 'user-agent': 'micro-ping' },
       json: true,
     };
 
     /*
-   * ping the server with the header above...
-   * note: should find a way to use async/await in this file
-   */
+     * ping the server with the header above...
+     * note: should find a way to use async/await in this file
+     */
     const ping = await request(process.env.ROOT_URL || 'http://localhost:3000', pingConfig);
     console.log(ping);
-
-    /*
+  }),
+  /*
    * ...every 5 minutes
    */
-  }),
   300000
 );
